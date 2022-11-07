@@ -1,0 +1,58 @@
+@mixin box-shadow($top, $left, $blur, $color)  {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+ }
+
+#main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+#quote-box {
+  max-width: 500px;
+  padding: 50px;
+  color: #fff;
+  border-radius: 5px;
+  flex-direction: column;
+  @include box-shadow(4px, 4px, 8px, #000);
+}
+#text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  &::before, &::after {
+    content: '"';
+  }
+}
+
+#author {
+  font-style: italic;
+  text-align: right;
+    a {
+      text-decoration: none;
+      color: #fff;
+      &:hover {
+        color: #ccc;
+      }
+      &::before {
+        content: "-";
+      }
+    }
+}
+
+#share, #new {
+  max-width: 45%;
+  display: inline-block;
+  margin: 10px 20px;
+}
+#new button:focus {
+  box-shadow: none;
+}
+#tweet-quote {
+  color: #fff;
+  text-decoration: none;
+}
+#tweet-quote:hover {
+  color: #ccc;
+}

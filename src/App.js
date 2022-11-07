@@ -1,7 +1,10 @@
+import QuoteEnator from './components/QuoteEnator';
 
 function App() {
   return (
-    <>This is App</>
+    <>
+      <QuoteEnator />
+    </>
   );
 }
 
